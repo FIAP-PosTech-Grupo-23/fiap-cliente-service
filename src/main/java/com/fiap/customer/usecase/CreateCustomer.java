@@ -3,12 +3,15 @@ package com.fiap.customer.usecase;
 import com.fiap.customer.domain.Customer;
 import com.fiap.customer.gateway.entity.CustomerEntity;
 import com.fiap.customer.gateway.repository.CustomerRepository;
+import com.fiap.customer.usecase.validation.CustomerValidator;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class CreateCustomer {
 
     private final CustomerRepository repository;
+
     private final CustomerValidator validator;
 
     public CreateCustomer(CustomerRepository repository, CustomerValidator validator) {
