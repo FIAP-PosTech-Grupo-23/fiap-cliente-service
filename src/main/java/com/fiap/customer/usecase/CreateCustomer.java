@@ -1,4 +1,4 @@
-package com.fiap.customer.usecase;
+    package com.fiap.customer.usecase;
 
 import com.fiap.customer.domain.Customer;
 import com.fiap.customer.gateway.entity.CustomerEntity;
