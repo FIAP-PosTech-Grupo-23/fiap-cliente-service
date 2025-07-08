@@ -1,6 +1,8 @@
 package com.fiap.customer.domain;
 
+import com.fiap.customer.exception.ValidationException;
 import lombok.Getter;
+
 import java.util.Objects;
 
 @Getter
@@ -25,15 +27,15 @@ public class Address {
 
     private void validate(String street, String number, String cep, String city, String state) {
         if (isBlank(street))
-            throw new IllegalArgumentException("Street must not be empty.");
+            throw new ValidationException("Street must not be empty.");
         if (isBlank(number))
-            throw new IllegalArgumentException("Number must not be empty.");
+            throw new ValidationException("Number must not be empty.");
         if (isBlank(cep))
-            throw new IllegalArgumentException("CEP must not be empty.");
+            throw new ValidationException("CEP must not be empty.");
         if (isBlank(city))
-            throw new IllegalArgumentException("City must not be empty.");
+            throw new ValidationException("City must not be empty.");
         if (isBlank(state))
-            throw new IllegalArgumentException("State must not be empty.");
+            throw new ValidationException("State must not be empty.");
     }
 
     private boolean isBlank(String value) {

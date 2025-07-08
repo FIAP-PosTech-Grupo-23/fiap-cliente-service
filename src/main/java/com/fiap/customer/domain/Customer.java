@@ -1,5 +1,6 @@
 package com.fiap.customer.domain;
 
+import com.fiap.customer.exception.ValidationException;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -36,19 +37,19 @@ public class Customer {
 
     private void validate(String name, Cpf cpf, String email, LocalDate birthDate, List<Address> addresses) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name must not be empty.");
+            throw new ValidationException("Name must not be empty.");
         }
         if (cpf == null) {
-            throw new IllegalArgumentException("CPF must not be null.");
+            throw new ValidationException("CPF must not be null.");
         }
         if (email == null || !email.contains("@")) {
-            throw new IllegalArgumentException("Email must be valid.");
+            throw new ValidationException("Email must be valid.");
         }
         if (birthDate == null || birthDate.isAfter(LocalDate.now())) {
-            throw new IllegalArgumentException("Birth date must be valid.");
+            throw new ValidationException("Birth date must be valid.");
         }
         if (addresses == null || addresses.isEmpty()) {
-            throw new IllegalArgumentException("At least one address is required.");
+            throw new ValidationException("At least one address is required.");
         }
     }
 }
