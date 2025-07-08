@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List; // <- esse import estava faltando
 
 @Entity
 @Table(name = "customers")
@@ -27,6 +28,7 @@ public class CustomerEntity {
     private String email;
     private String phone;
 
-    
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "customer_id") // cria a FK em AddressEntity
+    private List<AddressEntity> addresses;
 }
-    
