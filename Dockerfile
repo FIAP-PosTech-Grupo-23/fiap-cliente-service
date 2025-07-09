@@ -7,5 +7,5 @@ RUN mvn -f /usr/src/app/pom.xml clean package -DskipTests
 # Etapa de execução com JDK leve
 FROM eclipse-temurin:21-alpine
 COPY --from=build /usr/src/app/target/fiap-cliente-service-0.0.1-SNAPSHOT.jar /app/fiap-cliente-service.jar
-EXPOSE 8080
+EXPOSE 8083
 CMD ["java", "-jar", "/app/fiap-cliente-service.jar"]
