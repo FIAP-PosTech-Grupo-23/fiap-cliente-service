@@ -32,6 +32,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(response);
     }
 
+    @ExceptionHandler(InvalidCpfException.class)
+    public ResponseEntity<ErrorResponse> handleInvalidCpf(InvalidCpfException ex) {
+        ErrorResponse response = new ErrorResponse(
+                HttpStatus.BAD_REQUEST.value(),
+                "CPF inválido.",
+                List.of(ex.getMessage()),
+                LocalDateTime.now());
+        return ResponseEntity.badRequest().body(response);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
         ErrorResponse response = new ErrorResponse(

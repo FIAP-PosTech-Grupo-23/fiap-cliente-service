@@ -1,6 +1,7 @@
 package com.fiap.cliente.domain;
 
 import java.util.Objects;
+import com.fiap.cliente.exception.InvalidCpfException;
 
 public class Cpf {
 
@@ -8,7 +9,7 @@ public class Cpf {
 
     public Cpf(String value) {
         if (!isValid(value)) {
-            throw new IllegalArgumentException("Invalid CPF: " + value);
+            throw new InvalidCpfException(value);
         }
         this.value = normalize(value);
     }

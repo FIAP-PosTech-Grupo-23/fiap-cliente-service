@@ -4,6 +4,7 @@ import com.fiap.cliente.domain.Cliente;
 import com.fiap.cliente.gateway.entity.ClienteEntity;
 import com.fiap.cliente.gateway.repository.ClienteRepository;
 import com.fiap.cliente.mapper.ClienteMapper;
+import com.fiap.cliente.usecase.validation.ValidadorCliente;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -13,13 +14,17 @@ public class CriarClienteUseCase {
 
     private final ClienteRepository repository;
     private final ClienteMapper mapper;
+    private final ValidadorCliente validadorCliente;
 
-    public CriarClienteUseCase(ClienteRepository repository, ClienteMapper mapper) {
+    public CriarClienteUseCase(ClienteRepository repository, ClienteMapper mapper, ValidadorCliente validadorCliente) {
         this.repository = repository;
         this.mapper = mapper;
+        this.validadorCliente = validadorCliente;
     }
 
     public UUID execute(Cliente cliente) {
+        validadorCliente.validarParaCriacao(cliente);
+        
         UUID uid = UUID.randomUUID();
 
         Cliente clienteComUid = new Cliente(
