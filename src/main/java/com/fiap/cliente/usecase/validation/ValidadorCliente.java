@@ -3,6 +3,7 @@ package com.fiap.cliente.usecase.validation;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import com.fiap.cliente.domain.Cliente;
+import com.fiap.cliente.exception.ValidationException;
 import com.fiap.cliente.gateway.repository.ClienteRepository;
 
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class ValidadorCliente {
 
     private void validarCpfUnico(Cliente cliente) {
         if (repository.existsByCpf(cliente.getCpf().getValue())) {
-            throw new RuntimeException("CPF já cadastrado: " + cliente.getCpf().getValue());
+            throw new ValidationException("CPF já cadastrado: " + cliente.getCpf().getValue());
         }
     }
 }
