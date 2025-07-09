@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.fiap</groupId>
-    <artifactId>fiap-customer-service</artifactId>
+    <artifactId>fiap-cliente-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>fiap-customer-service</name>
-    <description>Demo project for Spring Boot</description>
+    <name>fiap-cliente-service</name>
+    <description>Serviço de Clientes FIAP</description>
 
     <properties>
         <java.version>21</java.version>
@@ -65,6 +65,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+</dependency>
+
     </dependencies>
 
     <build>
@@ -106,7 +111,7 @@
                         <exclude>**/dto/**</exclude>
                         <exclude>**/config/**</exclude>
                         <exclude>**/exception/**</exclude>
-                        <exclude>**/FiapProdutoServiceApplication.class</exclude>
+                        <exclude>**/ClienteApplication.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>

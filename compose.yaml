@@ -1,17 +1,18 @@
 services:
-  customer:
+  cliente:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8081:8081"
+      - "8080:8080"
     depends_on:
       postgresql:
         condition: service_healthy
     environment:
-      - CUSTOMER_DATASOURCE_URL=postgresql
-      - CUSTOMER_DATASOURCE_USERNAME=postgres
-      - CUSTOMER_DATASOURCE_PASSWORD=postgres
+      - CLIENTE_DATASOURCE_URL=postgresql
+      - CLIENTE_DATASOURCE_PORT=5432
+      - CLIENTE_DATASOURCE_USERNAME=postgres
+      - CLIENTE_DATASOURCE_PASSWORD=postgres
     networks:
       - springboot-postgres-network
 
@@ -20,7 +21,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=customer
+      - POSTGRES_DB=cliente
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
