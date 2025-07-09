@@ -10,6 +10,6 @@ public record ClienteRequest(
         String email,
         String telefone,
         LocalDate dataNascimento,
-        EnderecoRequest endereco,
+        String endereco,
         UUID uid) {
 }

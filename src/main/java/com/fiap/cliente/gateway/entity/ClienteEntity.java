@@ -27,7 +27,5 @@ public class ClienteEntity {
 
     private String email;
     private String telefone;
-
-    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private EnderecoEntity endereco;
+    private String endereco;
 }

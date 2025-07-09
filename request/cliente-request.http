@@ -8,16 +8,8 @@ Content-Type: application/json
   "email": "joao@email.com",
   "telefone": "11999999999",
   "dataNascimento": "1990-01-01",
-  "endereco": {
-    "rua": "Rua das Flores",
-    "numero": "123",
-    "cep": "12345-678",
-    "cidade": "São Paulo",
-    "estado": "SP",
-    "complemento": "Apto 101"
-  }
+  "endereco": "Rua das Flores, 123 - São Paulo/SP"
 }
-
 
 ### Buscar cliente por ID
 GET http://localhost:8080/clientes/a5db46c6-9296-48fd-bf6f-5b0440a5f683

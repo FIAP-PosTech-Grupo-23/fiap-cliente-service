@@ -9,5 +9,6 @@ import com.fiap.cliente.gateway.entity.ClienteEntity;
 
 public interface ClienteRepository extends JpaRepository<ClienteEntity, UUID> {
     Optional<ClienteEntity> findByUid(UUID uid);
+
     boolean existsByCpf(String cpf);
 }

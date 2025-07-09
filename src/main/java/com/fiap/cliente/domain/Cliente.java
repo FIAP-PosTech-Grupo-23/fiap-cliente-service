@@ -16,10 +16,10 @@ public class Cliente {
     private final String email;
     private String telefone;
     private final LocalDate dataNascimento;
-    private final Endereco endereco;
+    private final String endereco;
 
     public Cliente(String nome, Cpf cpf, String email, String telefone, LocalDate dataNascimento,
-            Endereco endereco) {
+            String endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -29,7 +29,7 @@ public class Cliente {
     }
 
     public Cliente(UUID uid, String nome, Cpf cpf, String email, String telefone, LocalDate dataNascimento,
-            Endereco endereco) {
+            String endereco) {
         this(nome, cpf, email, telefone, dataNascimento, endereco);
         this.uid = uid;
     }

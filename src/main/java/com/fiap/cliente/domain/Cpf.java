@@ -22,7 +22,8 @@ public class Cpf {
     }
 
     private boolean isValid(String cpf) {
-        if (cpf == null) return false;
+        if (cpf == null)
+            return false;
 
         cpf = normalize(cpf);
 
@@ -39,11 +40,13 @@ public class Cpf {
             }
 
             d1 = 11 - (d1 % 11);
-            if (d1 >= 10) d1 = 0;
+            if (d1 >= 10)
+                d1 = 0;
 
             d2 += d1 * 2;
             d2 = 11 - (d2 % 11);
-            if (d2 >= 10) d2 = 0;
+            if (d2 >= 10)
+                d2 = 0;
 
             return d1 == Character.getNumericValue(cpf.charAt(9)) &&
                     d2 == Character.getNumericValue(cpf.charAt(10));
@@ -54,8 +57,10 @@ public class Cpf {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Cpf)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Cpf))
+            return false;
         Cpf cpf = (Cpf) o;
         return value.equals(cpf.value);
     }
