@@ -1,5 +1,5 @@
 ### Criar cliente
-POST http://localhost:8080/clientes
+POST http://localhost:8083/clientes
 Content-Type: application/json
 
 {
@@ -12,5 +12,5 @@ Content-Type: application/json
 }
 
 ### Buscar cliente por ID
-GET http://localhost:8080/clientes/a5db46c6-9296-48fd-bf6f-5b0440a5f683
+GET http://localhost:8083/clientes/a5db46c6-9296-48fd-bf6f-5b0440a5f683
 Accept: application/json

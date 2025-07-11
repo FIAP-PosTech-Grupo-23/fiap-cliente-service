@@ -1,8 +1,8 @@
 package com.fiap.cliente.controller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import com.fiap.cliente.controller.request.ClienteRequest;
 import com.fiap.cliente.controller.response.ClienteResponse;

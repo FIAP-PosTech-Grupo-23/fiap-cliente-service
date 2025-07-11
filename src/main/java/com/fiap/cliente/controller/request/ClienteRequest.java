@@ -3,7 +3,6 @@ package com.fiap.cliente.controller.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Schema(description = "Dados para criação de um cliente")
 public record ClienteRequest(
@@ -23,8 +22,5 @@ public record ClienteRequest(
         LocalDate dataNascimento,
         
         @Schema(description = "Endereço completo do cliente", example = "Rua das Flores, 123 - São Paulo/SP")
-        String endereco,
-        
-        @Schema(description = "ID único do cliente (gerado automaticamente se não informado)", example = "a5db46c6-9296-48fd-bf6f-5b0440a5f683")
-        UUID uid) {
+        String endereco) {
 }

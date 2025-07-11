@@ -30,8 +30,7 @@ class ClienteMapperTest {
                 "joao@email.com",
                 "11999999999",
                 LocalDate.of(1990, 1, 1),
-                "Rua das Flores, 123",
-                null
+                "Rua das Flores, 123"
         );
 
         Cliente cliente = mapper.toDomain(request);
